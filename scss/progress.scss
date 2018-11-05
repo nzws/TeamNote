@@ -1,0 +1,30 @@
+.progress {
+  height: 4px;
+  margin-bottom: 10px;
+
+  .pg-main {
+    width: 20%;
+  }
+
+  .bg-transparent {
+    animation: pg-transparent 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pg-transparent {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 80%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+#now_loading {
+  margin-top: 10px;
+}
