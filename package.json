@@ -35,8 +35,7 @@
     "marked": "^0.5.1",
     "popper.js": "^1.14.4",
     "simplemde": "^1.11.2",
-    "toastr": "^2.1.4",
-    "turbolinks": "^5.2.0"
+    "toastr": "^2.1.4"
   },
   "devDependencies": {
     "browserify": "^16.2.3",

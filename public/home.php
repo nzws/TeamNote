@@ -5,12 +5,6 @@
   <?php
   $title = "ホーム";
   include "../include/header.php"; ?>
-  <script>
-    document.addEventListener("turbolinks:load", function() {
-      home.list("home");
-      home.list("pinned");
-    })
-  </script>
 </head>
 <body>
 <?php include "../include/navbar.php"; ?>
@@ -93,5 +87,11 @@
   </div>
 </script>
 <?php include "../include/footer.php"; ?>
+<script>
+  window.onload = function() {
+    home.list("home");
+    home.list("pinned");
+  }
+</script>
 </body>
 </html>

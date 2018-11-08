@@ -11,14 +11,6 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
   <?php
   $title = $n["title"] . " - ノート";
   include "../include/header.php"; ?>
-  <script>
-    document.addEventListener("turbolinks:load", function() {
-      note.view_comment(<?=$n["id"]?>);
-
-      const n = elemId("note");
-      n.innerHTML = markdown(n.innerHTML);
-    })
-  </script>
 </head>
 <body>
 <?php include "../include/navbar.php"; ?>
@@ -96,5 +88,13 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
   </div>
 </script>
 <?php include "../include/footer.php"; ?>
+<script>
+  window.onload = function() {
+    note.view_comment(<?=$n["id"]?>);
+
+    const n = elemId("note");
+    n.innerHTML = markdown(n.innerHTML);
+  }
+</script>
 </body>
 </html>

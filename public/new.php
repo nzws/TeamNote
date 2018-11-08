@@ -15,24 +15,6 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
 <html data-page="new">
 <head>
   <?php include "../include/header.php"; ?>
-  <script>
-    let simplemde;
-    document.addEventListener("turbolinks:load", function() {
-      simplemde = new SimpleMDE({
-        element: elemId("post"),
-        spellChecker: false,
-        status: ["lines", {
-          className: "keystrokes",
-          defaultValue: function(el) {
-            el.innerHTML = "Counts: 0";
-          },
-          onUpdate: function(el) {
-            el.innerHTML = "Counts: " + (simplemde.value().length);
-          }
-        }, "cursor"]
-      });
-    })
-  </script>
 </head>
 <body>
 <?php include "../include/navbar.php"; ?>
@@ -68,5 +50,23 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
   </div>
 </main>
 <?php include "../include/footer.php"; ?>
+<script>
+  let simplemde;
+  window.onload = function() {
+    simplemde = new SimpleMDE({
+      element: elemId("post"),
+      spellChecker: false,
+      status: ["lines", {
+        className: "keystrokes",
+        defaultValue: function(el) {
+          el.innerHTML = "Counts: 0";
+        },
+        onUpdate: function(el) {
+          el.innerHTML = "Counts: " + (simplemde.value().length);
+        }
+      }, "cursor"]
+    });
+  }
+</script>
 </body>
 </html>
