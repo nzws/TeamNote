@@ -35,6 +35,7 @@
 
         <div id="home_posts" class="card-columns list"></div>
         <div id="search_posts" class="list" style="display: none;">
+          <h3><span id="search_result_text"></span>の検索結果</h3>
           <div class="card-columns" id="search_posts_content"></div>
         </div>
         <div id="admin_posts" class="card-columns list" style="display: none;"></div>

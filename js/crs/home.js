@@ -54,6 +54,7 @@ home.search = function(page = 0, load_mode_button) {
   if (!page) {
     home.show('search');
     elemId('search_posts_content').innerHTML = '';
+    elemId('search_result_text').textContent = elemId('search_text').value;
   }
 
   fetch(
