@@ -31,3 +31,9 @@
     </ul>
   </div>
 </nav>
+<div class="now_loading" style="display: none">
+  <div class="progress">
+    <div class="progress-bar bg-transparent"></div>
+    <div class="progress-bar pg-main"></div>
+  </div>
+</div>

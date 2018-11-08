@@ -20,9 +20,6 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
 <?php include "../include/navbar.php"; ?>
 <main>
   <div class="container">
-    <div class="center now_loading" style="display: none">
-      <?=ui_progress()?>
-    </div>
     <h2><?=$title?></h2>
     <div class="form-group">
       <label>タイトル</label>

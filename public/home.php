@@ -10,9 +10,6 @@
 <?php include "../include/navbar.php"; ?>
 <main>
   <div class="container-fluid">
-    <div class="center now_loading">
-      <?=ui_progress()?>
-    </div>
     <div class="row">
       <div class="col-md-9">
         <div class="input-group">

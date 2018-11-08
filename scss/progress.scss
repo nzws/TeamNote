@@ -1,6 +1,7 @@
 .progress {
   height: 4px;
   margin-bottom: 10px;
+  background: transparent;
 
   .pg-main {
     width: 20%;
@@ -25,6 +26,9 @@
   }
 }
 
-#now_loading {
-  margin-top: 10px;
+.now_loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }

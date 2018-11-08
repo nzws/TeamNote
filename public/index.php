@@ -18,6 +18,13 @@ if (isset($_SESSION["id"])) {
   <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
 </a>
 
+<div class="now_loading" style="display: none">
+  <div class="progress">
+    <div class="progress-bar bg-transparent"></div>
+    <div class="progress-bar pg-main"></div>
+  </div>
+</div>
+
 <main class="center">
   <div class="container">
     <h2>TeamNote</h2>
@@ -93,10 +100,6 @@ if (isset($_SESSION["id"])) {
       </div>
 
       <button class="btn btn-info btn-block" onclick="login.register()">新規登録</button>
-    </div>
-
-    <div class="center now_loading" style="display: none">
-      <?=ui_progress()?>
     </div>
   </div>
 </main>

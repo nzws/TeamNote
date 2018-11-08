@@ -16,9 +16,6 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
 <?php include "../include/navbar.php"; ?>
 <main>
   <div class="container">
-    <div class="center now_loading" style="display: none">
-      <?=ui_progress()?>
-    </div>
     <div class="row">
       <div class="col-md-9">
         <div class="shadow-sm p-3 mb-3 bg-white rounded">
