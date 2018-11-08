@@ -4,11 +4,11 @@ function elemId(_id) {
 
 function escapeHTML(text) {
   text = text
-  .replace(/"/g, '"')
-  .replace(/'/g, "'")
-  .replace(/&/g, '&amp;')
-  .replace(/</g, '&lt;')
-  .replace(/>/g, '&gt;');
+    .replace(/"/g, '"')
+    .replace(/'/g, "'")
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 
   return text;
 }
@@ -23,7 +23,7 @@ function buildQuery(data) {
 }
 
 function apiUrl(url) {
-  return API["endpoint"] + url + API["suffix"];
+  return API['endpoint'] + url + API['suffix'];
 }
 
 function markdown(text) {

@@ -8,6 +8,6 @@ window.marked = require('marked');
 require('turbolinks').start();
 
 window.toastr.options = {
-  "closeButton": true,
-  "positionClass": "toast-bottom-left",
+  closeButton: true,
+  positionClass: 'toast-bottom-left'
 };
