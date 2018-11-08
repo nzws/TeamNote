@@ -21,3 +21,15 @@ function buildQuery(data) {
   body += 'd=' + new Date().getTime();
   return body;
 }
+
+function apiUrl(url) {
+  return API["endpoint"] + url + API["suffix"];
+}
+
+function markdown(text) {
+  marked.setOptions({
+    breaks: true,
+    sanitize: true
+  });
+  return marked(text);
+}

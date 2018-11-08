@@ -2,7 +2,7 @@ const login = {};
 
 login.login = function() {
   $(".now_loading").show();
-  fetch(API["endpoint"] + 'auth/login' + API["suffix"], {
+  fetch(apiUrl('auth/login'), {
     headers: {'content-type': 'application/x-www-form-urlencoded'},
     method: 'POST',
     credentials: 'include',
@@ -42,7 +42,7 @@ login.register = function() {
   }
 
   $(".now_loading").show();
-  fetch(API["endpoint"] + 'auth/register' + API["suffix"], {
+  fetch(apiUrl('auth/register'), {
     headers: {'content-type': 'application/x-www-form-urlencoded'},
     method: 'POST',
     credentials: 'include',
@@ -79,7 +79,7 @@ login.register = function() {
 
 login.verifyInviteCode = function () {
   $(".now_loading").show();
-  fetch(API["endpoint"] + 'auth/verify_invite' + API["suffix"], {
+  fetch(apiUrl('auth/verify_invite'), {
     headers: {'content-type': 'application/x-www-form-urlencoded'},
     method: 'POST',
     credentials: 'include',

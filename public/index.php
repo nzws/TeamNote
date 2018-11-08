@@ -1,4 +1,11 @@
-<?php $nologin = true; require_once("../lib/bootloader.php"); ?>
+<?php
+$nologin = true;
+require_once("../lib/bootloader.php");
+if (isset($_SESSION["id"])) {
+  header("Location: " . u("home"));
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html data-page="index">
 <head>
@@ -54,26 +61,29 @@
       <button class="btn btn-primary btn-block" onclick="login.show('login')">ログイン</button>
       <hr>
 
-      <div class="input-group mb-4">
+      <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-user-friends fa-fw"></i></span>
         </div>
-        <input type="text" class="form-control" id="reg_display_name" placeholder="表示名 (公開)">
+        <input type="text" class="form-control" id="reg_display_name" placeholder="表示名">
       </div>
+      <small class="form-text text-muted mb-4">ノートの投稿者名などに表示されます(変更可) 1～15文字</small>
 
-      <div class="input-group mb-4">
+      <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-user fa-fw"></i></span>
         </div>
-        <input type="text" class="form-control" id="reg_username" placeholder="ログインに使用するユーザID">
+        <input type="text" class="form-control" id="reg_username" placeholder="User ID">
       </div>
+      <small class="form-text text-muted mb-4">ログイン時に使用 2～10文字の英数字</small>
 
-      <div class="input-group mb-4">
+      <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-key fa-fw"></i></span>
         </div>
         <input type="password" class="form-control" id="reg_password" placeholder="Password">
       </div>
+      <small class="form-text text-muted mb-4">8～64文字</small>
 
       <div class="input-group mb-4">
         <div class="input-group-prepend">

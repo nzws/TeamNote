@@ -11,11 +11,8 @@ $code = s($_POST["invite_code"]);
 $user = s($_POST["username"]);
 $pass = s($_POST["password"]);
 $name = s($_POST["display_name"]);
-if (!$user || !$pass || !$name) {
-  api_json(["error" => "値が入力されていません。"]);
-}
 
-if (!checkV($name, 1, 10)) api_json(["error" => "表示名は1～10文字でお願いします。"]);
+if (!checkV($name, 1, 15)) api_json(["error" => "表示名は1～15文字でお願いします。"]);
 if (!checkV($user, 2, 10) || !ctype_alnum($user)) api_json(["error" => "ユーザIDは2～10文字の英数字でお願いします。"]);
 if (!checkV($pass, 8, 64)) api_json(["error" => "パスワードは8～64文字でお願いします。"]);
 

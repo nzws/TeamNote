@@ -9,8 +9,6 @@ function s($p) {
 }
 
 function checkV($var, $min_length, $max_length) {
-  if (empty($var)) return false;
-
   $length = mb_strlen($var);
   return ($length >= $min_length && $length <= $max_length);
 }

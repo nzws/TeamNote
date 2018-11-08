@@ -1,10 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="<?=$env["RootUrl"]?>"><?=$env["SiteName"]?></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="<?=u("home")?>"><?=$env["SiteName"]?></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="<?=u("home")?>"><i class="fas fa-th-large fa-fw"></i> ダッシュボード</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=u("tags")?>"><i class="fas fa-tags fa-fw"></i> タグ一覧</a>
+      </li>
+    </ul>
     <ul class="navbar-nav ml-auto">
       <form class="form-inline">
         <a class="btn btn-outline-warning" href="<?=u("new")?>"><b>新規投稿</b></a>

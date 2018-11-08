@@ -19,3 +19,15 @@ body {
   right: 0;
   border: 0;
 }
+
+@media (max-width: 992px) {
+  .show_pc {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .show_smp {
+    display: none;
+  }
+}

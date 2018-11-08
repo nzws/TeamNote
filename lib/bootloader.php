@@ -38,6 +38,8 @@ $libpt = dirname(__FILE__)."/";
 require_once($libpt."db.php");
 require_once($libpt."components.php");
 require_once($libpt."user.php");
+require_once($libpt."note.php");
+require_once($libpt."comments.php");
 
 require_once($libpt."../include/ui.php");
 

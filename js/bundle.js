@@ -2,7 +2,9 @@
 window.$ = require('jquery');
 require('bootstrap');
 window.toastr = require('toastr');
-window.mustache = require('mustache');
+window.handlebars = require('handlebars');
+window.SimpleMDE = require('simplemde');
+window.marked = require('marked');
 require('turbolinks').start();
 
 window.toastr.options = {

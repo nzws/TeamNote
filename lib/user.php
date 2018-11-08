@@ -48,3 +48,12 @@ function verifyInviteCode($code) {
   $mysqli->close();
   return isset($row[0]);
 }
+
+function user4Pub($u) {
+  return [
+    "id" => $u["id"],
+    "username" => $u["username"],
+    "display_name" => $u["display_name"],
+    "role_id" => $u["role_id"]
+  ];
+}
