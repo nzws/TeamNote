@@ -3,7 +3,7 @@ require_once("../../../lib/apiloader.php");
 require_once("../../../lib/bootloader.php");
 
 $title = s($_POST["title"]);
-$tags = json_decode($_POST["tags"]);
+//$tags = json_decode($_POST["tags"]);
 $body = s($_POST["body"]);
 $body = str_replace('&gt;', '>', $body); //Markdownの引用がぶっ壊れる
 $edit = s($_POST["edit_id"]);

@@ -9,7 +9,7 @@ post.post = function(text) {
     body: buildQuery({
       csrf_token: API['csrf'],
       title: elemId('title').value,
-      tags: elemId('tags').value.split(','),
+      //tags: elemId('tags').value.split(','),
       body: text,
       is_admin: elemId('only_admin').checked ? 1 : 0,
       edit_id: elemId('edit_id').value,
