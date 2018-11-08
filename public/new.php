@@ -25,11 +25,13 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
       <label>タイトル</label>
       <input type="text" class="form-control" id="title" required value="<?=$n["title"]?>">
     </div>
+    <!--
     <div class="form-group">
       <label>タグ</label>
       <input type="text" class="form-control" id="tags" value="<?=$tags?>">
       <small class="form-text text-muted">カンマで区切る (例: 行事,予定 など)</small>
     </div>
+    -->
     <textarea id="post" class="w-max"><?=$n["body"]?></textarea>
     <div class="custom-control custom-checkbox">
       <input type="checkbox" class="custom-control-input" id="only_admin" <?=($my["role_id"] == 3 ? "" : "disabled")?> <?=($n["is_admin"] ? "checked" : "")?>>

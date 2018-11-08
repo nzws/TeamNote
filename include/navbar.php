@@ -9,9 +9,11 @@
       <li class="nav-item">
         <a class="nav-link" href="<?=u("home")?>"><i class="fas fa-th-large fa-fw"></i> ダッシュボード</a>
       </li>
+      <!--
       <li class="nav-item">
         <a class="nav-link" href="<?=u("tags")?>"><i class="fas fa-tags fa-fw"></i> タグ一覧</a>
       </li>
+      -->
     </ul>
     <ul class="navbar-nav ml-auto">
       <form class="form-inline">
