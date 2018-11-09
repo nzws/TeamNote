@@ -11,7 +11,7 @@
 <main>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-9 order-12 order-md-11">
         <div class="input-group">
           <input type="text" class="form-control" id="search_text" placeholder="検索ワード..." required>
           <div class="input-group-append">
@@ -41,7 +41,7 @@
         <div id="admin_posts" class="card-columns list" style="display: none;"></div>
         <div id="archive_posts" class="card-columns list" style="display: none;"></div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 order-11 order-md-12 mb-4">
         <b>ピン留め中のノート</b>
 
         <div id="pinned_posts" class="list"></div>

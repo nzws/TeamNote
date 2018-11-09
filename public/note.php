@@ -59,7 +59,7 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
             <button class="btn btn-outline-danger btn-sm" onclick="note.delete(<?=$n["id"]?>, 2)"><i class="fas fa-trash-alt fa-fw"></i> 削除</button>
           <?php endif; ?>
         </div>
-        <div class="shadow-sm p-3 bg-white rounded" id="note"><?=$n["body"]?></div>
+        <div class="shadow-sm p-3 bg-white rounded mb-4" id="note"><?=$n["body"]?></div>
       </div>
       <div class="col-md-3">
         <b>コメント</b>

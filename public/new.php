@@ -35,7 +35,7 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
     <textarea id="post" class="w-max"><?=$n["body"]?></textarea>
     <div class="custom-control custom-checkbox">
       <input type="checkbox" class="custom-control-input" id="only_admin" <?=($my["role_id"] == 3 ? "" : "disabled")?> <?=($n["is_admin"] ? "checked" : "")?>>
-      <label class="custom-control-label" for="only_admin">権限ユーザー以外は閲覧できないようにする（非公開投稿）</label>
+      <label class="custom-control-label" for="only_admin">特権ユーザー以外は閲覧できないようにする（非公開投稿）</label>
     </div>
     <div class="form-group mt-4">
       <label>ピン留め</label>
