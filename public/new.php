@@ -69,7 +69,8 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
       initialEditType: 'wysiwyg',
       previewStyle: 'vertical',
       height: '400px',
-      initialValue: text
+      initialValue: text,
+      language: 'ja'
     });
   }
 </script>
