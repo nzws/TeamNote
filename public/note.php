@@ -1,6 +1,5 @@
 <?php
 require_once("../lib/bootloader.php");
-header("cache-control: no-transform"); // Cloudflareが空行を取ってってMarkdownが誤作動する
 $n = getNote(s($_GET["id"]));
 if (empty($n)) exit("ERROR:このノートは存在しません。");
 if ($n["is_deleted"] == 2) exit("ERROR:このノートは削除済みです。");
@@ -60,7 +59,7 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
             <button class="btn btn-outline-danger btn-sm" onclick="note.delete(<?=$n["id"]?>, 2)"><i class="fas fa-trash-alt fa-fw"></i> 削除</button>
           <?php endif; ?>
         </div>
-        <div class="shadow-sm p-3 bg-white rounded mb-4" id="note"><?=$n["body"]?></div>
+        <div class="shadow-sm p-3 bg-white rounded mb-4" id="note"></div>
       </div>
       <div class="col-md-3">
         <b>コメント</b>
@@ -87,11 +86,12 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
 </script>
 <?php include "../include/footer.php"; ?>
 <script>
+  const data = `<?=$n["body"]?>`;
+
   window.onload = function() {
     note.view_comment(<?=$n["id"]?>);
 
-    const n = elemId("note");
-    n.innerHTML = markdown(n.innerHTML);
+    elemId("note").innerHTML = markdown(data);
   }
 </script>
 </body>
