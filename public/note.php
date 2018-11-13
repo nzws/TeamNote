@@ -59,7 +59,7 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
             <button class="btn btn-outline-danger btn-sm" onclick="note.delete(<?=$n["id"]?>, 2)"><i class="fas fa-trash-alt fa-fw"></i> 削除</button>
           <?php endif; ?>
         </div>
-        <div class="shadow-sm p-3 bg-white rounded mb-4" id="note"></div>
+        <div class="shadow-sm p-3 bg-white rounded mb-4" id="note">読み込み中...</div>
       </div>
       <div class="col-md-3">
         <b>コメント</b>
@@ -86,12 +86,10 @@ if ($n["is_admin"] == 1 && $my["role_id"] != 3) exit("ERROR:このノートは�
 </script>
 <?php include "../include/footer.php"; ?>
 <script>
-  const data = `<?=$n["body"]?>`;
 
   window.onload = function() {
+    note.view_note(<?=$n["id"]?>);
     note.view_comment(<?=$n["id"]?>);
-
-    elemId("note").innerHTML = markdown(data);
   }
 </script>
 </body>

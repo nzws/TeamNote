@@ -52,16 +52,24 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
 </main>
 <?php include "../include/footer.php"; ?>
 <script>
-  const data = `<?=(isset($n["body"]) ? $n["body"] : '')?>`;
-
   let editor;
   window.onload = function() {
+<?php if (isset($n["id"])) : ?>
+    note.get_note(<?=$n["id"]?>).then(text => {
+      load(text);
+    });
+<?php else : ?>
+    load();
+<?php endif; ?>
+  };
+
+  function load(text = "") {
     editor = new Editor({
       el: elemId("post"),
       initialEditType: 'wysiwyg',
       previewStyle: 'vertical',
       height: '400px',
-      initialValue: data
+      initialValue: text
     });
   }
 </script>

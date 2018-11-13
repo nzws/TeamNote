@@ -1,5 +1,38 @@
 const note = {};
 
+note.get_note = async id =>
+  new Promise((resolve, reject) => {
+    $('.now_loading').show();
+    fetch('viewmd' + API['suffix'] + '?id=' + id, {
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      method: 'GET',
+      credentials: 'include'
+    })
+      .then(function(response) {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw response;
+        }
+      })
+      .then(function(text) {
+        $('.now_loading').hide();
+        resolve(text);
+      })
+      .catch(function(error) {
+        console.error(error);
+        toastr.error('サーバとの通信中にエラーが発生しました。', 'エラー');
+        $('.now_loading').hide();
+        reject();
+      });
+  });
+
+note.view_note = function(id) {
+  note.get_note(id).then(text => {
+    elemId('note').innerHTML = markdown(text);
+  });
+};
+
 note.view_comment = function(id, max_id = 0, load_mode_button) {
   if (load_mode_button) load_mode_button.className = 'invisible';
   $('.now_loading').show();
