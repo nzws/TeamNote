@@ -40,6 +40,7 @@ require_once($libpt."components.php");
 require_once($libpt."user.php");
 require_once($libpt."note.php");
 require_once($libpt."comments.php");
+require_once($libpt."push7.php");
 
 require_once($libpt."../include/ui.php");
 

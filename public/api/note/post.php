@@ -31,6 +31,9 @@ $mysqli->close();
 if ($edit) $id = $edit;
 
 if (!$err && $id) {
+  if (!$edit) {
+    sendPush7("新規投稿", "「{$title}」 by {$my["display_name"]}", "https://" . $env["domain"] . u("note") . "?id=" . $id);
+  }
   api_json(["id" => $id]);
 } else {
   api_json(["error" => "データベースエラー"]);
