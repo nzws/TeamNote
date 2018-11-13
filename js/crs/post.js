@@ -1,6 +1,10 @@
 const post = {};
 
 post.post = function(text) {
+  const parser = document.createElement('div');
+  parser.innerHTML = text.replace(/<[^>]*>/g, '');
+  text = parser.textContent;
+
   $('.now_loading').show();
   fetch(apiUrl('note/post'), {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },

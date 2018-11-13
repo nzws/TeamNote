@@ -1,5 +1,6 @@
 <?php
 require_once("../lib/bootloader.php");
+header("cache-control: no-transform"); // Cloudflareが空行を取ってってMarkdownが誤作動する
 $n = getNote(s($_GET["id"]));
 if (empty($n)) exit("ERROR:このノートは存在しません。");
 if ($n["is_deleted"] == 2) exit("ERROR:このノートは削除済みです。");

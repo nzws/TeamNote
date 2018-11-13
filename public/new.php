@@ -15,6 +15,8 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
 <html data-page="new">
 <head>
   <?php include "../include/header.php"; ?>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tui-editor@1.2.6/dist/tui-editor.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tui-editor@1.2.6/dist/tui-editor-contents.min.css" />
 </head>
 <body>
 <?php include "../include/navbar.php"; ?>
@@ -32,7 +34,7 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
       <small class="form-text text-muted">カンマで区切る (例: 行事,予定 など)</small>
     </div>
     -->
-    <textarea id="post" class="w-max"><?=$n["body"]?></textarea>
+    <div id="post"></div>
     <div class="custom-control custom-checkbox">
       <input type="checkbox" class="custom-control-input" id="only_admin" <?=($my["role_id"] == 3 ? "" : "disabled")?> <?=($n["is_admin"] ? "checked" : "")?>>
       <label class="custom-control-label" for="only_admin">特権ユーザー以外は閲覧できないようにする（非公開投稿）</label>
@@ -44,26 +46,22 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
     </div>
     <input type="hidden" value="<?=(isset($n["id"]) ? $n["id"] : "")?>" id="edit_id">
     <div class="form-group mt-4">
-      <button class="btn btn-primary btn-lg btn-block" onclick="post.post(simplemde.value())">:: 投稿 ::</button>
+      <button class="btn btn-primary btn-lg btn-block" onclick="post.post(editor.getValue())">:: 投稿 ::</button>
     </div>
   </div>
 </main>
 <?php include "../include/footer.php"; ?>
 <script>
-  let simplemde;
+  const data = `<?=(isset($n["body"]) ? $n["body"] : '')?>`;
+
+  let editor;
   window.onload = function() {
-    simplemde = new SimpleMDE({
-      element: elemId("post"),
-      spellChecker: false,
-      status: ["lines", {
-        className: "keystrokes",
-        defaultValue: function(el) {
-          el.innerHTML = "Counts: 0";
-        },
-        onUpdate: function(el) {
-          el.innerHTML = "Counts: " + (simplemde.value().length);
-        }
-      }, "cursor"]
+    editor = new Editor({
+      el: elemId("post"),
+      initialEditType: 'wysiwyg',
+      previewStyle: 'vertical',
+      height: '400px',
+      initialValue: data
     });
   }
 </script>

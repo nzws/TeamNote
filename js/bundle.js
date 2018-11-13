@@ -3,7 +3,7 @@ window.$ = require('jquery');
 require('bootstrap');
 window.toastr = require('toastr');
 window.handlebars = require('handlebars');
-window.SimpleMDE = require('simplemde');
+window.Editor = require('tui-editor');
 window.marked = require('marked');
 
 window.toastr.options = {
