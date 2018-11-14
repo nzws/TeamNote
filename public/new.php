@@ -35,7 +35,15 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
     </div>
     -->
     <div id="post"></div>
-    <div class="custom-control custom-checkbox">
+    <div class="form-group mt-4">
+      <label>
+        画像アップロード<br>
+        <small>* アップロードに外部ストレージを使用します。個人情報が含まれる画像は送信しないでください。</small>
+      </label><br>
+      <input type="file" onchange="post.image_upload()" accept="image/*;capture=camera" id="upload_image" multiple>
+    </div>
+
+    <div class="custom-control custom-checkbox mt-4">
       <input type="checkbox" class="custom-control-input" id="only_admin" <?=($my["role_id"] == 3 ? "" : "disabled")?> <?=($n["is_admin"] ? "checked" : "")?>>
       <label class="custom-control-label" for="only_admin">特権ユーザー以外は閲覧できないようにする（非公開投稿）</label>
     </div>
@@ -46,7 +54,7 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
     </div>
     <input type="hidden" value="<?=(isset($n["id"]) ? $n["id"] : "")?>" id="edit_id">
     <div class="form-group mt-4">
-      <button class="btn btn-primary btn-lg btn-block" onclick="post.post(editor.getValue())">:: 投稿 ::</button>
+      <button class="btn btn-primary btn-lg btn-block" onclick="post.post()">:: 投稿 ::</button>
     </div>
   </div>
 </main>
@@ -70,7 +78,25 @@ $title = $is_edit ? $n["title"] . "を編集" : "新規投稿";
       previewStyle: 'vertical',
       height: '400px',
       initialValue: text,
-      language: 'ja'
+      language: 'ja',
+      toolbarItems: [
+        'heading',
+        'bold',
+        'strike',
+        'divider',
+        'hr',
+        'quote',
+        'divider',
+        'ul',
+        'ol',
+        'task',
+        'indent',
+        'outdent',
+        'divider',
+        'table',
+        'link',
+        'divider'
+      ],
     });
   }
 </script>

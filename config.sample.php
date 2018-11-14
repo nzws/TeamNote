@@ -22,6 +22,9 @@ $env["is_maintenance"] = false;
 // $env["push7"]["appno"] = "";
 // $env["push7"]["apikey"] = "";
 
+// imgur
+$env["imgur"]["client_id"] = "xxxxxx";
+
 // 定数: いじらないでね
 define('PATH', dirname(__FILE__) . '/');
 define('CONF_VERSION', 1); //Devtip: CONF_VERSIONを変えたらlib/bootloader.phpの$ConfigVersionの数字を変える

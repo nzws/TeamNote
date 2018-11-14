@@ -6,7 +6,8 @@
   const API = {
     suffix: "<?=($env["is_debug"] ? ".php" : "")?>",
     endpoint: "<?=$env["RootUrl"]?>api/",
-    csrf: "<?=$_SESSION['csrf_token']?>"
+    csrf: "<?=$_SESSION['csrf_token']?>",
+    imgur_client_id: "<?=$env["imgur"]["client_id"]?>"
   };
 </script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
